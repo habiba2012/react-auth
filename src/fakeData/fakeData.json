@@ -1,0 +1,18 @@
+[
+    {
+       " name":"Bike",
+        "img":"https://mir-s3-cdn-cf.behance.net/project_modules/1400/b77e3450873551.58dbd7afbdd32.png"
+    },
+    {
+       " name":"Car",
+        "img":"https://entrackr.com/wp-content/uploads/2019/11/Uber--1200x600.jpg"
+    },
+    {
+        "name":"Bus",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Movia-bus-22.JPG/1200px-Movia-bus-22.JPG"
+    },
+    {
+        "name":"Train",
+        "img":"https://media.kasperskydaily.com/wp-content/uploads/sites/92/2015/12/06023356/train-hack-featured-1.jpg"
+    }
+]
