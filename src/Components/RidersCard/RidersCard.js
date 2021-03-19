@@ -9,23 +9,35 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import fakeData from '../../fakeData/fakeData.json';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
-  root: {
+    root: {
+        flexGrow: 1,
+        textAlign: 'center',
+        justifyContent:'space-between',
+        marginTop: '50px',
+        marginLeft:'80px'
+      },
+  rootCard: {
     maxWidth: 300,
   },
   media: {
-    height: 140,
-  },
+    height: '240px',
+    width:'100%'
+  }
 });
 
 const RidersCard = ()=> {
-    console.log(fakeData)
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
+    <div className={classes.root}>
+    <Grid container>
+       <Grid  item xs={12} sm={6} md={4} lg={4} xl={3}>
+       <Card className={classes.rootCard}>
+
+    <CardActionArea>
       {fakeData[0].img ?<CardMedia
           component="img"
           className={classes.media}
@@ -36,26 +48,35 @@ const RidersCard = ()=> {
           <Typography gutterBottom variant="h5" component="h2">
           {fakeData[0].name}
           </Typography>
-          
+          <Button variant="contained" color="primary">
+           Buy Ticket
+          </Button>
         </CardContent>
       </CardActionArea>
-      <CardActionArea>
-      {fakeData[1].img ?<CardMedia
-          component="img"
+      </Card>
+    </Grid>
+    <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+    <Card className={classes.rootCard}>
+    <CardActionArea>
+      {fakeData[1].img? <CardMedia
           className={classes.media}
-          src={fakeData[1].img}
+          image={fakeData[1].img}
           title="riders car"
-        /> :  <CircularProgress />}
+        />:  <CircularProgress />}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-          {fakeData[1].name}
+            {fakeData[1].name}
           </Typography>
-          
+          <Button variant="contained" color="primary">
+           Buy Ticket
+          </Button>
         </CardContent>
-
-
       </CardActionArea>
-      <CardActionArea>
+      </Card>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+        <Card className={classes.rootCard}>
+    <CardActionArea>
       {fakeData[2].img ?<CardMedia
           className={classes.media}
           image={fakeData[2].img}
@@ -65,10 +86,16 @@ const RidersCard = ()=> {
           <Typography gutterBottom variant="h5" component="h2">
           {fakeData[2].name}
           </Typography>
-          
+          <Button variant="contained" color="primary">
+           Buy Ticket
+          </Button>
         </CardContent>
       </CardActionArea>
-      <CardActionArea>
+      </Card>
+      </Grid>
+    <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
+        <Card className={classes.rootCard}>
+    <CardActionArea>
       {fakeData[3].img? <CardMedia
           className={classes.media}
           image={fakeData[3].img}
@@ -78,10 +105,17 @@ const RidersCard = ()=> {
           <Typography gutterBottom variant="h5" component="h2">
             {fakeData[3].name}
           </Typography>
-          
+          <Button variant="contained" color="primary">
+           Buy Ticket
+          </Button>
         </CardContent>
       </CardActionArea>
-        </Card>
+      </Card>
+    </Grid>
+
+  </Grid>
+  </div>
+    
   );
 }
 
