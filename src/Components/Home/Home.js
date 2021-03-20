@@ -1,6 +1,5 @@
 import React from 'react';
 import RidersCard from '../RidersCard/RidersCard';
- import Header from '../Header/Header';
  import Grid from '@material-ui/core/Grid';
 import './Home.css'
 import fakeData from '../../fakeData/fakeData.json'
@@ -20,10 +19,9 @@ const Home = () => {
     }
     return (
         <div style={styles.homeContainer}>
-            <Header></Header>
             <Grid container spacing={3}>
                 {
-                    fakeData.map(transportData => <RidersCard transportData = {transportData}></RidersCard>)
+                    fakeData.map(transportData => <RidersCard key={transportData.id} transportData = {transportData}></RidersCard>)
                 }
                 
             </Grid>

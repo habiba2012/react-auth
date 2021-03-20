@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -25,9 +25,13 @@ const useStyles = makeStyles({
 });
 
 const RidersCard = ({transportData})=> {
-  const {name, img} = transportData;
+  const {id, name, img} = transportData;
   const classes = useStyles();
   const history = useHistory()
+
+  /* useEffect(()=>{
+   const data = fakeData.find( vh => vh.name === Vehicle);
+  }, []) */
 
   const handleDestination = (id) =>{
       history.push(`/destination/${id}`);
@@ -46,16 +50,16 @@ const RidersCard = ({transportData})=> {
               <Typography gutterBottom variant="h5" component="h2">
               {name}
               </Typography>
+              </CardContent>
+             </CardActionArea>
+              <CardActions>
               <Button onClick={() => handleDestination(id)} variant="contained" color="primary">
               Buy Ticket
               </Button>
-            </CardContent>
-        </CardActionArea>
-      </Card>
+             </CardActions>
+          </Card>
      </Grid> 
-
-    
-  );
+   );
 }
 
 export default RidersCard;

@@ -26,16 +26,13 @@ const Login = () => {
     history.replace(from)
     })
     .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    var email = error.email;
-    var credential = error.credential;
-   
-  });
+     var errorMessage = error.message;
+     console.log(errorMessage)
+    });
 
     }
     return (
-        <div>
+        <div style={{marginTop:'200px'}}>
             <button onClick={handleGoogleSignIn}>Signin with Google</button>
         </div>
     );
