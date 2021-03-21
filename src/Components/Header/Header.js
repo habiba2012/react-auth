@@ -70,7 +70,7 @@ const Header = (props) => {
           </Typography>
           <Typography variant="h6" className={classes.title}>
             <Button
-              onClick={() => history.push("/destination")}
+              onClick={() => history.push("/destination/1")}
               style={{ color: "white" }}
               variant="text"
             >

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import React, { useState, useContext  } from "react";
+import { Button } from "react-bootstrap";
 import { UserContext } from "../../App";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import {  useHistory, useLocation } from "react-router-dom";
 import {
   initializeLoginFramework,
   handleGoogleSignIn,
@@ -10,7 +10,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "./loginManager";
-import { useContext } from "react";
+
 const Login = () => {
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
@@ -94,22 +94,23 @@ const Login = () => {
 
   const formStyle= {
     textAlign: 'center', 
-     marginTop: "200px"
+     marginTop: "100px",
+    
   }
 
   return (
     <div style={formStyle}>
-    <h2 className="text-center mb-4"> {newUser ? "Sign Up" : "Login"}</h2>
-    <form onSubmit={handleSubmit}>
-      {newUser && <input name="name" type="text" onBlur={handleBlur} placeholder="Your name"/>}
+    <h2 className="text-center mb-3"> {newUser ? "Sign Up" : "Login"}</h2>
+    <form onSubmit={handleSubmit} className="text-center mb-2">
+      {newUser && <input className="text-center mb-2" name="name" type="text" onBlur={handleBlur} placeholder="Your name"/>}
       <br/>
-      <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
+      <input type="text" name="email" className="text-center mb-2" onBlur={handleBlur} placeholder="Your Email address" required/>
       <br/>
       <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+      <br/><br/>
+      <input class="btn btn-primary" type="submit" value={newUser ? 'Sign up' : 'Sign in'}/>
       <br/>
-      <input type="submit" value={newUser ? 'Sign up' : 'Sign in'}/>
-      <br/>
-      <input type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
+      <input className="text-center mb-2" type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id=""/>
 
         <label htmlFor="newUser">Create an Account</label>
 
@@ -139,6 +140,15 @@ const Login = () => {
           onClick={fbSignIn}
         >
           Continue with Facebook
+        </Button>
+        <Button
+          variant="secondary"
+          size="md"
+          block
+          style={{ width: "350px", height: "40px" }}
+          onClick={signOut }
+        >
+          Sign out
         </Button>
         <br/>
         
