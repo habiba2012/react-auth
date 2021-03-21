@@ -152,12 +152,11 @@ const Login = () => {
         </Button>
         <br/>
         
-        <p style={{ color: "red" }}>{user.error}</p>
-        {user.success && (
-          <p style={{ color: "green" }}>
-            User {newUser ? "created" : "Logged In"} successfully
-          </p>
-        )}
+        <p style={{color:'red'}}>{user.error}</p>
+
+         {
+            user.success &&  <p style={{color:'green'}}>User {newUser ?'Created' : 'Logged in'} successfully.</p>
+         }
        
       </div>
   </div>

@@ -6,7 +6,6 @@ import Home from "./Components/Home/Home";
 import Header from "./Components/Header/Header";
 import { createContext, useState } from "react";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import Signup from "./Components/Signup/Signup";
 import Footer from "./Components/Footer/Footer";
 
 export const UserContext = createContext();
@@ -31,9 +30,6 @@ function App() {
           </PrivateRoute>
           <Route path="/login">
             <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
           </Route>
         </Switch>
         <Footer></Footer>

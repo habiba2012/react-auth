@@ -101,7 +101,7 @@ const Header = (props) => {
               style={{ backgroundColor: "red" , color:"white", fontSize:"10px", textDecoration:"none"}}
               variant="text"
             >
-              <Link to="/login" >{loggedInUser?.email? loggedInUser.name : "Login"}</Link>
+              <Link to="/login" >{loggedInUser?.email? loggedInUser.name || loggedInUser.displayName || loggedInUser.email: "Login"}</Link>
             </Button>
           </Typography>
           <Button color="inherit">

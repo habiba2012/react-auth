@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { GeoAlt } from 'react-bootstrap-icons';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import {initializeLoginFramework} from "../Login/loginManager";
+import Vehicledetails from "../Vehicledetails/Vehicledetails";
 
 
 const Destination = () => {
@@ -47,21 +48,30 @@ const Destination = () => {
 
             </form>
             </div>}
-            {formSubmit && <div>
+            {formSubmit && <div style={{border:"1px solid black", width:"300px"}}>
               <h4 className="my-2"><GeoAlt color="salmon" size={30}/>Pick from :{locationName.from}</h4>
             
              <h4 className="my-2"><GeoAlt color="salmon" size={30}/>Pick To :{locationName.to}</h4>
+             <Vehicledetails/>
+            <Vehicledetails/>
+            <Vehicledetails/>
               </div>}
-            <div>
-               <img src={vehicles.img} style={{width:"100px"}} alt=""/><p>{vehicles.name}</p><p>{vehicles.costPerPerson}</p><PermIdentityIcon/><p>{vehicles.seat}</p>
-            </div>
+            {/* <div style={{display:"inline-block", margin:"3px", padding:"3px" }}>
+               <img src={vehicles.img} style={{width:"100px"}} alt=""/>
+               <p>{vehicles.name}</p>
+               <p>{vehicles.costPerPerson}</p>
+               <PermIdentityIcon/><p>{vehicles.seat}</p>
+            </div> */}
+           
+
+
          {/*  <p>Choose a destination from map.</p>
           <input type="text" onBlur={e=> setOrigin(e.target.value)} placeholder="Pick from"/>
           <input type="text" onBlur={e=> setDestination(e.target.value)} placeholder="Pick to"/> */}
          
           </div>
        <div className="col-md-6 col-sm-12">
-        <Direction origin={origin} destination={destination}></Direction>
+        <Direction origin={origin} destination={destination} style={{marginLeft:"100px"}}></Direction>
         </div>
       </div>
     </div>

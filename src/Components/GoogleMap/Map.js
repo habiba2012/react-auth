@@ -18,7 +18,7 @@ const onLoad = marker => {
 const Map =()=> {
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyBwgTLriBlOCc90JZ0J2Qf7soy97vlhqh8"
+      googleMapsApiKey="AIzaSyA0ZlZW0eG0DKJ9MPOl8VMUf9tESna8Y1M"
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
