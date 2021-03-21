@@ -8,3 +8,7 @@ html,
 .app{
     text-align: center;
 }
+body{
+    background-image: url("assets/images/Bg.png");
+    background: cover;
+}
